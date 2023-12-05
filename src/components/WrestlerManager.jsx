@@ -29,17 +29,17 @@ function WrestlerManager() {
   }
 
   const handleSubmit = (event) => {
-    let hasEmptyName = false
+    let hasEmptyValue = false
 
     for (let i = 0; i < wrestlers.length; i++) {
-      if (wrestlers[i].name === "") {
-        hasEmptyName = true
+      if (wrestlers[i].name === "" || wrestlers[i].health === "" || wrestlers[i].moves.length === 0 || wrestlers[i].moves[0].name === "" || wrestlers[i].moves[0].damage <= 0) {
+        hasEmptyValue = true
         break
       }
     }
 
-    if (hasEmptyName) {
-      alert("Please enter names for all wrestlers.")
+    if (hasEmptyValue) {
+      alert("Please enter details for all wrestlers.")
       event.preventDefault()
       return
     }
@@ -64,29 +64,33 @@ function WrestlerManager() {
       </form>
 
       {tournamentResults.length > 0 && (
-        <div className="w-full max-w-xl mx-auto my-4 p-4   shadow-md rounded-3xl  bg-neutral-500">
+        <ol className="relative border-s border-gray-200 dark:border-gray-700">
           <h2 className="text-3xl text-green-300 my-4 underline">Tournament Results:</h2>
           {tournamentResults.map((line, index) => {
             if (line.startsWith("Match")) {
               return (
-                <strong key={index} className="text-red-800 bg-slate-300 rounded">
-                  {line}
-                </strong>
+                <li className="mb-10 ms-4">
+                  <strong key={index} className="text-red-800 bg-slate-300 rounded">
+                    {line}
+                  </strong>
+                </li>
               )
             } else if (line.includes("wins the tournament!")) {
               return (
-                <strong key={index} className=" text-5xl text-white drop-shadow-lg ">
-                  {line}
-                </strong>
+                <li className="mb-10 ms-4">
+                  <strong key={index} className=" text-5xl text-white drop-shadow-lg ">
+                    {line}
+                  </strong>
+                </li>
               )
             } else if (line.includes("wins this match!") || line.includes("advances with a bye")) {
               return (
-                <>
+                <li className="mb-10 ms-4">
                   <strong key={index} className=" text-2xl text-green-400 drop-shadow-lg ">
                     {line}
                   </strong>
                   <br />
-                </>
+                </li>
               )
             } else {
               return (
@@ -96,7 +100,7 @@ function WrestlerManager() {
               )
             }
           })}
-        </div>
+        </ol>
       )}
     </div>
   )

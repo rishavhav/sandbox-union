@@ -30,7 +30,7 @@ const WrestlerForm = ({ wrestler, setWrestlerData, formNumber }) => {
 
   return (
     <div className="text-center">
-      <div className="w-full max-w-xl mx-auto my-4 p-4   shadow-black rounded-3xl  bg-neutral-500 ">
+      <div className="w-full max-w-xl mx-auto my-4 p-4   shadow-black rounded-xl  bg-neutral-500 ">
         <h1 className="text-3xl  rounded pt-1 pb-1">
           Wrestler #{formNumber}: {wrestler.name}
         </h1>

@@ -1,6 +1,6 @@
 # SandBox Union Project
 
-Welcome to the SandBox Union Question. This is a React project for wrestling tournament.
+Welcome to the SandBox Union Question. This is a React + Tailwind CSS project for wrestling tournament.
 
 ## How to Run the Project
 

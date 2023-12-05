@@ -37,7 +37,3 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/en/) installed
    npm run dev
 
    ```
-
-```
-
-```

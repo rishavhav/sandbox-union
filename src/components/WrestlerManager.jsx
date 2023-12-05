@@ -49,21 +49,21 @@ function WrestlerManager() {
 
       {tournamentResults.length > 0 && (
         <div className="">
-          <h2 className="text-3xl text-blue-800 my-4 underline">Tournament Results:</h2>
+          <h2 className="text-3xl text-green-300 my-4 underline">Tournament Results:</h2>
           {tournamentResults.map((line, index) => {
             if (line.startsWith("Match")) {
               return (
-                <strong key={index} className="text-red-800">
+                <strong key={index} className="text-red-800 bg-slate-300 rounded">
                   {line}
                 </strong>
               )
             } else if (line.includes("wins the tournament!")) {
               return (
-                <strong key={index} className=" text-5xl text-blue-700 drop-shadow-lg ">
+                <strong key={index} className=" text-5xl text-white drop-shadow-lg ">
                   {line}
                 </strong>
               )
-            } else if (line.includes("wins this match!")) {
+            } else if (line.includes("wins this match!") || line.includes("advances with a bye")) {
               return (
                 <>
                   <strong key={index} className=" text-2xl text-green-400 drop-shadow-lg ">
@@ -73,7 +73,11 @@ function WrestlerManager() {
                 </>
               )
             } else {
-              return <p key={index}>{line}</p>
+              return (
+                <p className="text-white" key={index}>
+                  {line}
+                </p>
+              )
             }
           })}
         </div>

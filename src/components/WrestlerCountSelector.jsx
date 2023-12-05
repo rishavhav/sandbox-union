@@ -12,7 +12,7 @@ function WrestlerCountSelector({ wrestlerCount, setWrestlerCount }) {
   return (
     <div className="flex flex-col items-center pt-8">
       <label className="pb-2">How many wrestlers?</label>
-      <input type="number" value={wrestlerCount} onChange={handleChange} min="0" max="4" />
+      <input class="bg-slate-200 border rounded pb-2" type="number" value={wrestlerCount} onChange={handleChange} min="0" max="4" />
     </div>
   )
 }

@@ -5,3 +5,11 @@
 body {
   font-family: "Lato", sans-serif;
 }
+
+.app-background {
+  background-image: url("../src/assets/img.jpg"); /* Replace with your image path */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  min-height: 100vh; /* Optional: Set minimum height to full viewport height */
+}

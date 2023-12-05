@@ -43,7 +43,7 @@ function WrestlerManager() {
           <WrestlerForm key={index} wrestler={wrestler} setWrestlerData={(updatedWrestler) => handleWrestlerChange(index, updatedWrestler)} formNumber={index + 1} />
         ))}
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 mb-10">
-          Submit All Wrestlers
+          Begin Tournament
         </button>
       </form>
 

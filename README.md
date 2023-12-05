@@ -37,3 +37,20 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/en/) installed
    npm run dev
 
    ```
+
+4. **Steps to test**
+
+   Go to
+
+   ```
+   http://localhost:5173/
+
+   ```
+
+   Enter number of wrestlers (0-4)
+
+   Fill each wrestler's Name, Health & Add Move.
+
+   Fill the Move by adding Move Name, Move Value and Type
+
+   Once all Wrestler details are filled click 'Begin Tournament'

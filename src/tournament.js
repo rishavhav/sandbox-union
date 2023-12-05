@@ -46,20 +46,20 @@ function simulateMatch(wrestler1, wrestler2) {
 function runTournament(wrestlers) {
   let tournamentLog = []
   while (wrestlers.length > 1) {
-    const newRound = []
+    const nextMatchWrestlers = []
     for (let i = 0; i < wrestlers.length; i += 2) {
       if (wrestlers[i + 1]) {
         const matchResult = simulateMatch(wrestlers[i], wrestlers[i + 1])
         tournamentLog = tournamentLog.concat(matchResult.log)
 
         const originalWinner = wrestlers.find((w) => w.name === matchResult.winner)
-        newRound.push(new Wrestler(matchResult.winner, originalWinner.originalHealth, wrestlers[i].moves))
+        nextMatchWrestlers.push(new Wrestler(matchResult.winner, originalWinner.originalHealth, wrestlers[i].moves))
       } else {
         tournamentLog.push(`${wrestlers[i].name} advances with a bye`)
-        newRound.push(wrestlers[i])
+        nextMatchWrestlers.push(wrestlers[i])
       }
     }
-    wrestlers = newRound
+    wrestlers = nextMatchWrestlers
   }
   tournamentLog.push(`${wrestlers[0].name} wins the tournament!`)
   return tournamentLog

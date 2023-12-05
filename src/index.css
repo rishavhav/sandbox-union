@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: font-sans, sans-serif;
 }
 
 .app-background {
-  background-image: url("../src/assets/img.jpg");
-  background-size: cover;
+  background-color: rgb(37, 35, 35);
+  background-size: auto;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   min-height: 100vh;
+}
+
+.darker-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.8), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

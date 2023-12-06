@@ -62,4 +62,4 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/en/) installed
 
    Once all Wrestler details are filled click 'Begin Tournament'
 
-![Sample Screenshot](https://github.com/rishavhav/sandbox-union/blob/main/screenshot.png)
+![Sample Screenshot](https://github.com/rishavhav/sandbox-union/blob/main/srcn.png)

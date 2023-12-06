@@ -29,7 +29,14 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/en/) installed
    cd sandbox-union
    ```
 
-3. **Start the Development Server**
+3. **Install Dependencies**
+
+   ```bash
+   npm install
+
+   ```
+
+4. **Start the Development Server**
 
    Launch the project on a local development server with this command::
 
@@ -38,7 +45,7 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/en/) installed
 
    ```
 
-4. **Steps to test**
+5. **Steps to test**
 
    Go to
 

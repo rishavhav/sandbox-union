@@ -32,17 +32,33 @@ function WrestlerManager() {
   }
 
   const handleSubmit = (event) => {
-    let hasEmptyValue = false
+    let hasEmptyNameValue = false
+    let hasEmptyHealthValue = false
+    let hasWrongMoveValue = false
 
     for (let i = 0; i < wrestlers.length; i++) {
-      if (wrestlers[i].name === "" || wrestlers[i].health === "" || wrestlers[i].moves.length === 0 || wrestlers[i].moves[0].name === "" || wrestlers[i].moves[0].damage <= 0) {
-        hasEmptyValue = true
+      if (wrestlers[i].name === "") {
+        hasEmptyNameValue = true
+        break
+      } else if (wrestlers[i].health === "") {
+        hasEmptyHealthValue = true
+        break
+      } else if (wrestlers[i].moves.length === 0 || wrestlers[i].moves[0].name === "" || wrestlers[i].moves[0].damage <= 0) {
+        hasWrongMoveValue = true
         break
       }
     }
 
-    if (hasEmptyValue) {
-      alert("Please enter details for all wrestlers.")
+    if (hasEmptyNameValue) {
+      alert("Please enter name for all wrestlers.")
+      event.preventDefault()
+      return
+    } else if (hasWrongMoveValue) {
+      alert("Please enter move details correctly.")
+      event.preventDefault()
+      return
+    } else if (hasEmptyHealthValue) {
+      alert("Please enter health details for all wrestlers.")
       event.preventDefault()
       return
     }
@@ -68,32 +84,33 @@ function WrestlerManager() {
 
       {tournamentResults.length > 0 && (
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
+          <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
           <h2 className="text-3xl text-green-300 my-4 underline">Tournament Results:</h2>
           {tournamentResults.map((line, index) => {
             if (line.startsWith("Match")) {
               return (
-                <li className="mb-10 ms-4">
-                  <strong key={index} className="text-red-800 bg-slate-300 rounded">
+                <>
+                  <strong key={index} className="bg-gray-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
                     {line}
                   </strong>
-                </li>
+                </>
               )
             } else if (line.includes("wins the tournament!")) {
               return (
-                <li className="mb-10 ms-4">
+                <>
                   <strong key={index} className=" text-5xl text-white drop-shadow-lg ">
                     {line}
                   </strong>
-                </li>
+                </>
               )
             } else if (line.includes("wins this match!") || line.includes("advances with a bye")) {
               return (
-                <li className="mb-10 ms-4">
-                  <strong key={index} className=" text-2xl text-green-400 drop-shadow-lg ">
+                <>
+                  <strong key={index} className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
                     {line}
                   </strong>
                   <br />
-                </li>
+                </>
               )
             } else {
               return (

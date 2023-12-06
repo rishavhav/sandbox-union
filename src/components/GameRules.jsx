@@ -8,10 +8,10 @@ const GameRules = () => {
         <div class="flex flex-col justify-between p-4 leading-normal">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rules of the game</h5>
 
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">1. Enter number of wrestlers. It should be [0-4]</p>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">2. Fill the form for each wrestler. Name, Health and Move can't be empty. It will show alert if you do!</p>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">3. Negative Health or Move Damage will throw alert!</p>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">4. Once all set click 'Begin Tournament' and enjoy 😁</p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">🥊 Enter number of wrestlers. It should be [0-4]</p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">🥊 Fill the form for each wrestler. Name, Health and Move can't be empty. It will show alert if you do!</p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">🥊 Negative Health or Move Damage will throw alert!</p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">🥊 Once all set click 'Begin Tournament' and enjoy! 😁</p>
         </div>
       </a>
     </div>

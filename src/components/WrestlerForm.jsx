@@ -29,8 +29,8 @@ const WrestlerForm = ({ wrestler, setWrestlerData, formNumber }) => {
   }
 
   return (
-    <div className="text-center">
-      <div className="w-full max-w-xl mx-auto my-4 p-4   shadow-black rounded-xl  bg-gray-800 ">
+    <div className="text-center ">
+      <div className="w-full max-w-xl mx-auto my-4 p-4   shadow-black rounded-xl  bg-gray-800 md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 ">
         <h1 className="text-3xl  rounded pt-1 pb-1 flex justify-center items-center text-gray-400">
           <span class="flex w-3 h-3 me-3 bg-green-400 rounded-full dark:bg-green-400"></span>
           Wrestler #{formNumber}: {wrestler.name}
@@ -50,7 +50,7 @@ const WrestlerForm = ({ wrestler, setWrestlerData, formNumber }) => {
             <button type="button" onClick={addMove} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4   rounded shadow mb-3 mt-3 mx-2">
               Add Move
             </button>
-            <button type="button" onClick={removeMove} className="bg-red-700 hover:bg-gray-700 text-white font-semibold py-2 px-4   rounded shadow mb-3 mt-3">
+            <button type="button" onClick={removeMove} className="bg-red-700 hover:bg-gray-800 text-white font-semibold py-2 px-4   rounded shadow mb-3 mt-3">
               Remove Move
             </button>
           </div>

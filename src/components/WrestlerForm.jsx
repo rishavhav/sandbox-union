@@ -36,7 +36,7 @@ const WrestlerForm = ({ wrestler, setWrestlerData, formNumber }) => {
           Wrestler #{formNumber}: {wrestler.name}
         </h1>
 
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+        <hr class="h-px my-4 " />
         <div className="pb-2">
           <label className="block text-gray-400 text-sm font-bold mb-2">Name:</label>
           <input placeholder=" Enter Name" className="bg-slate-200 border rounded py-1 required" type="text" name="name" value={wrestler.name} onChange={handleWrestlerChange} />

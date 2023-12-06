@@ -9,13 +9,16 @@ function WrestlerManager() {
   const [tournamentResults, setTournamentResults] = useState([])
 
   useEffect(() => {
-    setWrestlers(
-      Array.from({ length: wrestlerCount }, () => ({
+    if (wrestlers.length < wrestlerCount) {
+      const newWrestler = Array.from({ length: wrestlerCount - wrestlers.length }, () => ({
         name: "",
         health: 100,
         moves: [],
       }))
-    )
+      setWrestlers([...wrestlers, ...newWrestler])
+    } else if (wrestlers.length > wrestlerCount) {
+      setWrestlers(wrestlers.slice(0, wrestlerCount))
+    }
   }, [wrestlerCount])
 
   useEffect(() => {
